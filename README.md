@@ -116,7 +116,7 @@ In the main block, I loaded the book text, analyzed character sentiment, and cal
 
 - Difficuties During Writing:
 
-Initially, I struggled to understand the usage of NLTK functions, particulary the 'SentimentIntensityAnalyzer' and how to interpret its results. I had to refer to the NLTK documentation and examples for clarification.
+Initially, I struggled to understand the usage of NLTK functions, particulary the 'SentimentIntensityAnalyzer' and how to interpret its results. I had to ask ChatGpt on NLTK examples for clarification.
 Next, it was also challenging to correctly identify sentences containing charcter names while parsing through the book text. I had to ensure that each character's name was considered case-insensitively and that variations of name were accounted for. After that, when I was calculating the sentiment percentages, it required careful consideration of the counts and handling division by zero errors when no mentions were found for a character. 
 
 
