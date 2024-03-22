@@ -1,12 +1,12 @@
 # Text-Analysis-Project
 ## **1. Project Overview**
 
-My goal centered around analyzing "A Christmas Carol" by Charles Dickens sourced from Project Gutenberg. The primary objectives were twofold: firstly, to ascertain the prominence of main characters by counting their frequency within the text, and secondly, to conduct sentiment analysis around each main character to discern whether they were portrayed positively or negatively. Leveraging NLTK for text processing and sentiment analysis, the project aimed to extract actionable insights from the narrative's portrayal of characters. Through meticulous data preprocessing and sentiment analysis techniques, the project sought to unravel the nuances of character representation and their impact on the overall storyline.
+I wanted to dive into "A Christmas Carol" by Charles Dickens, a book I picked up from Project Gutenberg. My goal was pretty straightforward: I aimed to figure out how often the main characters popped up in the story and to understand if they were shown in a good or bad light. To do this, I used a tool called NLTK, which helps with breaking down and analyzing texts. The idea was to dig deep into how Dickens portrayed these characters and see what that tells us about the story as a whole. For practice, I also decided to check out which words showed up the most in the book. I kept track of how often each word appeared and saved this information in a file named 'refined_word_frequencies.txt'.
 
 ## 2. Implementation
 **Pre-work**
 
-I begin by importing the required libaires for text processing and the sentiment analysis. Including NLTK for natural language processing and the pickle for loading my text data. I have a pickle file containing the book text, so each time it will load the text data from the file. 
+I begin by importing the required libaries for text processing and the sentiment analysis. Including NLTK for natural language processing and the pickle for loading my text data. I have a pickle file containing the book text, so each time it will load the text data from the file. 
 ```python
 import re  
 import nltk
@@ -155,8 +155,13 @@ I think this is due to a few reasons that might caused the data to be biased:
 I think this type of sentiment analysis is useful as a broad tool to identify potential patterns in online reviews or in charcter protrayal, which could be helpful for a quick character profiling. However,  it should be complemented with more complexed analysis for application that requires an understanding of character development, and complex human emotions. 
 
 ## 4. Reflection
-  After analyzing 'A Christmas Carol' with natural language processing (NLP), I gained valuable insights into the prominence and portrayal of characters by counting character mentions and analyzing sentiment with NLTK.
+After analyzing 'A Christmas Carol', I learned a lot about how often characters appear and their portrayal by using NLTK to count mentions and analyze sentiments.
 
-Throughout the coding process, I used on ChatGPT for guidance, debugging, and learning new concepts. 
+During my coding journey, I leaned on ChatGPT for advice, fixing issues, and picking up new ideas.
 
-It also reminded me that automated tools are only a starting point and that human insight is necessary for a full understanding of the narrative. I think that finding a balance between computational efficiency and nuanced interpretation is essential, and I will continue to apply this approach to future analyses.
+I also came to see that starting with automated tools is just the beginning; truly understanding a story needs that human insight, especially considering my sentiment analysis results. I think combining technological know-how with a deeper human interpretation is crucial, and I intend to maintain this balance in my upcoming projects.
+
+
+
+
+
