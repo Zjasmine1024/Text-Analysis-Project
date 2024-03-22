@@ -3,7 +3,8 @@ from collections import Counter  # count how # times each words appear.
 import pickle
 
 
-# the goal is: analyze the frequency of words in book A Christmas Carol by Charles Dickens stored in 'book_text.txt' file, and excluding words listed in 'stop_words.txt'. I tried to use 'nltk.download('stopwords')' first (guided by ChatGpt), but I found that there are certain words I want to exclude, such as 'said', 'one', 'upon', so I made a txt file to add all stop words source from "sebleier/NLTK's list of english stopwords", and then I added the certain stop words from the orginal frequncy list that I wanted to exclude. The new frequency list is in the new file name: refined_word_frequencies.txt. This way, the words from the list are more meaningful.
+# the practice goal is: get more familiar with frequency analyzation. The aim is to analyze the frequency of words in book A Christmas Carol by Charles Dickens stored in 'book_text.txt' file, and excluding words listed in 'stop_words.txt'. I tried to use 'nltk.download('stopwords')' first (guided by ChatGpt), 
+# but I found that there are certain words I want to exclude, such as 'said', 'one', 'upon', so I made a txt file to add all stop words source from "sebleier/NLTK's list of english stopwords", and then I added the certain stop words from the orginal frequncy list that I wanted to exclude. The new frequency list is in the new file name: refined_word_frequencies.txt. This way, the words from the list are more meaningful.
 
 
 def load_book_text(pickle_file_path):

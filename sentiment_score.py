@@ -1,11 +1,14 @@
+
 import nltk
+
+# Download the punkt tokenizer models. This is used by the sent_tokenize function.
+nltk.download('punkt')
+nltk.download('vader_lexicon')
+ 
 import pickle
-from nltk.sentiment import (
-    SentimentIntensityAnalyzer,
-)  # Chatgpt told me this is neccesary for generating the sentiment score
-from nltk.tokenize import (
-    sent_tokenize,
-)  # cut into individual sentence, easier to handle.
+
+from nltk.sentiment import (SentimentIntensityAnalyzer,)  # Chatgpt told me this is neccesary for generating the sentiment score
+from nltk.tokenize import (sent_tokenize,)  # cut into individual sentence, easier to handle.
 
 
 def load_book_text_from_pickle(pickle_file_path):
@@ -38,14 +41,14 @@ def analyze_character_sentiment(
         book_text
     )  # Chatgpt debugged and said I need to split the text into sentences.
     sentiment_counts = {
-        "Scrooge": {"good_person": 0, "mutual": 0, "bad_person": 0},
-        "Marley": {"good_person": 0, "mutual": 0, "bad_person": 0},
-        "Bob": {"good_person": 0, "mutual": 0, "bad_person": 0},
-        "Tim": {"good_person": 0, "mutual": 0, "bad_person": 0},
-        "Fred": {"good_person": 0, "mutual": 0, "bad_person": 0},
-        "Past": {"good_person": 0, "mutual": 0, "bad_person": 0},
-        "Present": {"good_person": 0, "mutual": 0, "bad_person": 0},
-        "Future": {"good_person": 0, "mutual": 0, "bad_person": 0},
+        "Scrooge": {"good_person": 0, "neutral": 0, "bad_person": 0},
+        "Marley": {"good_person": 0, "neutral": 0, "bad_person": 0},
+        "Bob": {"good_person": 0, "neutral": 0, "bad_person": 0},
+        "Tim": {"good_person": 0, "neutral": 0, "bad_person": 0},
+        "Fred": {"good_person": 0, "neutral": 0, "bad_person": 0},
+        "Past": {"good_person": 0, "neutral": 0, "bad_person": 0},
+        "Present": {"good_person": 0, "neutral": 0, "bad_person": 0},
+        "Future": {"good_person": 0, "neutral": 0, "bad_person": 0},
     }
 
     for sentence in sentences:  # go through each sentences.
@@ -55,7 +58,7 @@ def analyze_character_sentiment(
                 if score >= 0.6:
                     sentiment_counts[character]["good_person"] += 1
                 elif score >= 0.3:
-                    sentiment_counts[character]["mutual"] += 1
+                    sentiment_counts[character]["neutral"] += 1
                 else:
                     sentiment_counts[character]["bad_person"] += 1
 
@@ -72,11 +75,11 @@ def calculate_sentiment_percentage(sentiment_counts):
             total_mentions += counts[sentiment]
         # I think turning into percentage is better to process
         good_percent = (counts["good_person"] / total_mentions) * 100
-        mutual_percent = (counts["mutual"] / total_mentions) * 100
+        neutral_percent = (counts["neutral"] / total_mentions) * 100
         bad_percent = (counts["bad_person"] / total_mentions) * 100
         sentiment_percentages[character] = {
             "good_person": good_percent,
-            "mutual": mutual_percent,
+            "neutral": neutral_percent,
             "bad_person": bad_percent,
         }
     return sentiment_percentages
